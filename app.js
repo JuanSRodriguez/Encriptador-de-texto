@@ -18,32 +18,44 @@ const image = document.getElementById('myImage');
 const image1 = document.getElementById('myImage1');
 const preguntaImg = document.querySelector('.pregunta-img');
 const toggleContainer = document.querySelector('.toggle-container');
+const main = document.querySelector('main');
+const footer = document.querySelector('footer');
+const nav = document.querySelector('nav');
 
 const body = document.body;
 
 
 let imagenVisible = true;
 
-
+// Función para mostrar el sidebar
 function toggleSidebar() {
     sidebar.classList.toggle('show');
     toggleBtn.classList.toggle('active');
     preguntaImg.classList.toggle('active');
     toggleContainer.classList.toggle('sidebar-visible');
+
+    if (sidebar.classList.contains('show')) {
+        document.addEventListener('click', clickOutside);
+    }
+}
+
+// Función para detectar clic fuera de la sidebar y ocultarla
+function clickOutside(event) {
+    const isClickInsideSidebar = sidebar.contains(event.target);
+    const isClickInsideToggleBtn = toggleBtn.contains(event.target);
+
+    if (!isClickInsideSidebar && !isClickInsideToggleBtn) {
+        sidebar.classList.remove('show');
+        toggleBtn.classList.remove('active'); 
+        preguntaImg.classList.remove('active');
+        toggleContainer.classList.remove('sidebar-visible');
+        
+        document.removeEventListener('click', clickOutside);
+    }
 }
 
 toggleBtn.addEventListener('click', toggleSidebar);
 
-function hideSidebar() {
-    sidebar.classList.remove('active');
-  }
-  
-  // Manejador de clic para el documento
-  document.addEventListener('click', (event) => {
-    if (!sidebar.contains(event.target) && !mainContent.contains(event.target)) {
-      hideSidebar();
-    }
-  });
 
 function mouseOver () {
     hoverMessage.textContent = 'Ayuda';
@@ -218,8 +230,3 @@ document.querySelector('.toggle-btn').addEventListener('click', function() {
     document.querySelector('main').classList.toggle('move-right');
     document.querySelector('footer').classList.toggle('move-right');
   });
-  
-
-
-
-
