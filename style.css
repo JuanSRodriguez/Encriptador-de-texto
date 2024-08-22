@@ -15,8 +15,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    transition: transform 0.3s ease; 
-    
+    transition: transform 0.3s ease;     
 }
 
 .navbar {
@@ -145,7 +144,7 @@ body {
 }
 
 .toggle-container.sidebar-visible {
-    transform: translateX(220px);
+    transform: translateX(180px);
 }
 
 /* Mueve los botones de ayuda y Modo noche hacia la derecha */
@@ -163,7 +162,7 @@ body {
 
 .toggle-btn.active,
 .pregunta-img.active {
-    transform: translateX(220px); /* Desplazamiento al hacer clic */
+    transform: translateX(180px); /* Desplazamiento al hacer clic */
 }
 
 .container-nav {
@@ -454,7 +453,7 @@ textarea::placeholder {
 /* Estilos para pie de pagina*/
 footer {
     background: radial-gradient(circle at center, #ff00ff, #4b0082);
-    height: 4rem;
+    height: 7rem;
 }
 
 footer p {
@@ -573,12 +572,12 @@ footer p {
         justify-content: center;
         align-items: center;
         margin-left: 2rem;
-        margin-top: 4rem;
+        margin-top: 1rem;
     }
     .textForm {
+        width: 100%;
         flex-grow: 1;
         margin-left: 1rem;
-        padding: 0px;
     }
     textarea {
         width: 100%;
@@ -590,12 +589,10 @@ footer p {
         width: 100%;
         font-size: 16px; /* Ajusta el tamaño de fuente para portátiles */
     }
-    .sidebar {
-        height: 10%;
-    }
+    
     .result {
         height: 28rem;
-        width: 60%;
+        width: 50%;
         flex-grow: 1;
         margin-left: 4rem;
     }
@@ -616,25 +613,14 @@ footer p {
     #button3{
         padding: 20px 20px;
     }
-    main, footer, nav {
-        transition: transform 0.3s ease;
-      }
-      
-      .move-right {
-        transform: translateX(50px); 
-      }
-      .move-left {
-        transform: translateX(-50px); 
-      }
-
     .sidebar p {
-        font-size: 14px;
+        font-size: 12px;
     }  
     .sidebar h2 {
-        font-size: 18px;
+        font-size: 15px;
     } 
     .sidebar h1 {
-        font-size: 22px;
+        font-size: 18px;
     } 
     #myText {
        height: 3rem; 
