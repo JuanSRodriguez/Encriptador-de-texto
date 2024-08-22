@@ -73,7 +73,7 @@ body {
 .close-button {
     color: var(--primary-color);
     float: right; 
-    font-size: 28px;
+    font-size: 40px;
     font-weight: bold;
 }
 
@@ -732,3 +732,4 @@ footer p {
         height: 5rem;
         margin-left: 0; /* Ajustado */
     }
+}
