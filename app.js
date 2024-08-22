@@ -18,9 +18,6 @@ const image = document.getElementById('myImage');
 const image1 = document.getElementById('myImage1');
 const preguntaImg = document.querySelector('.pregunta-img');
 const toggleContainer = document.querySelector('.toggle-container');
-const main = document.querySelector('main');
-const footer = document.querySelector('footer');
-const nav = document.querySelector('nav');
 
 const body = document.body;
 
