@@ -15,7 +15,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    transition: transform 0.3s ease;     
+    transition: transform 0.3s ease; 
 }
 
 .navbar {
@@ -266,6 +266,7 @@ body {
     height: auto;
     padding: 5rem;
     gap: 3rem;
+    margin-top: 3rem;
 }
 
 .textForm {
@@ -453,7 +454,7 @@ textarea::placeholder {
 /* Estilos para pie de pagina*/
 footer {
     background: radial-gradient(circle at center, #ff00ff, #4b0082);
-    height: 7rem;
+    height: 4rem;
 }
 
 footer p {
