@@ -1,0 +1,750 @@
+:root {
+    --primary-color: #36065C;
+    --secundary-color: #C400D1;
+    --terciary-color: #028992;
+    /*Colores modo oscuro*/
+    --dark-mode-primary: #2fd696ea; 
+    --dark-mode-secundary: #118663f8;
+    --dark-mode-third: #1D5445;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: transform 0.3s ease; 
+    
+}
+
+.navbar {
+    background: 
+    linear-gradient(to bottom,
+      rgba(86, 4, 134, 0.7) 0%,
+      rgba(64, 40, 78, 0.7) 0%,
+      rgba(255, 0, 255, 0.3) 100%
+    ),
+    radial-gradient(circle at center,
+      #ff00ff 0%,
+      #2a004a 95%,
+      #2a004a 100%
+    );
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 5rem;
+    background-color: transparent;
+    display: flex; 
+    align-items: center; 
+    padding: 10px 20px; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+    z-index: 1000;
+}
+
+/* Estilo de las ventas emergentes*/
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: var(--secundary-color);
+    margin: 15% auto; 
+    padding: 20px;
+    border: 2px solid var(--primary-color);
+    width: 20%; 
+    box-shadow: 0 2px 5px 1px var(--secundary-color);
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+}
+
+.close-button {
+    color: var(--primary-color);
+    float: right; 
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: white; 
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.img-modal {
+    width: 50%;
+    height: auto; 
+}
+
+.background-image {
+    background: 
+    linear-gradient(to bottom,
+      rgba(86, 4, 134, 0.7) 0%,
+      rgba(64, 40, 78, 0.7) 0%,
+      rgba(255, 0, 255, 0.3) 100%
+    ),
+    radial-gradient(circle at center,
+      #ff00ff 0%,
+      #2a004a 95%,
+      #2a004a 100%
+    );
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+}
+
+/* Estilos del div sidebar*/
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: var(--primary-color);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transform: translateX(-100%); 
+    transition: transform 0.3s ease; /* Transición suave */
+    z-index: 1000;
+    border-radius: 20px;
+    overflow-y: auto;
+}
+
+.sidebar.show {
+    transform: translateX(0); /* Mostrar sidebar */
+}
+
+/* estilos para el background del botón modo oscuro */
+.toggle-container {
+    width: 20px; 
+    height: 16px; 
+    border-radius: 15px; 
+    background-color: #ccc; 
+    position: fixed; 
+    top: 19px; 
+    left: 55px; 
+    padding: 5px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+}
+
+.toggle-container.dark-mode {
+    background-color: var(--dark-mode-primary);
+}
+
+.toggle-container.sidebar-visible {
+    transform: translateX(220px);
+}
+
+/* Mueve los botones de ayuda y Modo noche hacia la derecha */
+.toggle-btn,
+.pregunta-img {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; 
+    background-color:transparent;
+    transition: transform 0.3s ease;
+}
+
+.toggle-btn.active,
+.pregunta-img.active {
+    transform: translateX(220px); /* Desplazamiento al hacer clic */
+}
+
+.container-nav {
+    background-color: var(--primary-color);
+    margin-top: 2rem;
+    color: white;
+}
+
+.container-nav h2 {
+    color: var(--secundary-color);
+}
+
+
+/* Estilo del mensaje que aparece al pasar el ratón */
+.pregunta-img {
+    position: fixed;
+    top: 20px;
+    left: 55px;
+    border: none;
+    cursor: pointer;
+    z-index: 1000; 
+    background-color:transparent;
+}
+
+#hoverMessage {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: none;
+    box-shadow: 0 0 5px 2px var(--secundary-color);
+}
+
+#hoverMessage.show {
+    display: block;
+}
+
+#hoverMessage1 {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 3px;
+    display: none;
+    box-shadow: 0 0 5px 2px var(--secundary-color),
+}
+
+#hoverMessage1.show {
+    display: block;
+}
+
+/* Estilos del logo principal JSRC */
+.img-logo {
+    position: fixed; 
+    margin-top: -15px;
+    right: 0px; 
+    background-color: transparent;
+    border-radius: 18px;
+    z-index: 1000;
+}
+
+.img-logo img {
+    width: 14rem; 
+    height: auto; 
+    margin: 0; 
+}
+
+/* Estilos para boton de instrucciones*/
+.instruction-button {
+    display: flex;
+    align-items: right;
+    background-color: transparent;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 8px 8px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-left: 0rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+  
+  .icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+  }
+
+/* Estilos del form*/
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    padding: 10rem;
+    box-sizing: border-box;
+}
+
+.textForm {
+    display: flex;
+    flex-direction: column;
+    margin-left: 8rem;
+    color: #fffefe;
+    width: 95%;
+    margin-top: 2rem;
+}
+
+textarea {
+    width: 90%;
+    height: 32rem;
+    border: 2px solid var(--primary-color);
+    resize: vertical;
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 20px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    resize: none;
+    margin-top: 0rem;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color); 
+}
+
+textarea::placeholder {
+    color: white;
+}
+
+.advertencia {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    gap: 5px
+}
+
+/* Estilos para el div que muestra el mensaje de salida del encriptador*/
+.result {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    width: 50%; 
+    height: 40rem; 
+    border: 2px solid var(--secundary-color);
+    border-radius: 18px;
+    background-color: var(--primary-color);
+    color: white;
+    box-shadow: 0 0 5px 2px var(--secundary-color), 0 5px 0 3px var(--primary-color);  
+    margin-right: 4rem;
+    position: relative; 
+    margin-top: 1.5rem;
+}
+
+.result1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: flex-start; 
+    margin-top: 0rem;
+}
+
+.result h2 {
+    position: relative;
+    color: var(--secundary-color);
+    font-size: 18px;
+    top: 3rem;
+    text-align: center;
+}
+
+.result p {
+    position: relative;
+    font-size: 15px;
+    width: 16rem;
+    text-align: flex-start;
+}
+  
+.img-result img {
+    width: 14rem;
+    height: auto;
+    margin-top: -2rem;
+}
+
+#myImage1 {
+    visibility: hidden;
+}
+
+#myText1 {
+    position: relative;
+    top: 5rem;
+    text-align: center;
+}
+
+#myText {
+    max-height: 400px; 
+    overflow-y: auto; 
+    width: 80%; 
+    padding: 1rem;
+    background-color: var(--light-background-color); 
+    border: 1px solid var(--border-color); 
+    border-radius: 8px; 
+    text-align: center;
+    margin-left: 2rem;
+    top: -3rem;
+}
+
+/* Estilo del scrollbar */
+#myText::-webkit-scrollbar {
+   display: none;
+}
+
+.img-informacion{
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Estilos para mensaje emergente del botón de copiar */
+#copyMessage {
+    width: 100%;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%); 
+    background-color: transparent;
+    color: white;
+    padding: 5px 10px; 
+    border-radius: 5px;
+    opacity: 1; 
+    transition: opacity 0.1s ease; 
+    display: none;
+}
+
+/* Estilos de botones encriptar o desencriptar*/
+.button-container {
+    display: flex;
+    gap: 20px;
+}
+
+#button1,
+#button2 {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 1rem;
+    font-size: 16px;
+    cursor: pointer;
+    width: 44.5%;
+    height: 5rem;
+    box-shadow: 0 2px 5px 1px var(--primary-color);
+    border: 1px solid var(--secondary-color);
+}
+
+#button1:hover,
+#button2:hover {
+    background-color: var(--secondary-color);
+    color: white;
+}
+
+#button3 {
+    padding: 1.6rem 7.5rem;
+    background-color: var(--secundary-color);
+    color: white;
+    border-radius: 1rem;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 2px 5px 1px var(--primary-color);
+    border: 1px solid var(--secondary-color);
+    display: none;
+}
+
+#button3:hover {
+    background-color: white;
+    color: var(--secundary-color);
+}
+
+.button3 {
+    position: absolute;
+    width: 70%;
+    border-radius: 8px;
+    bottom: 10px;
+}
+
+/* Estilos para pie de pagina*/
+footer {
+    background: radial-gradient(circle at center, #ff00ff, #4b0082);
+    height: 4rem;
+}
+
+footer p {
+    color: white;
+    text-align: center;
+}
+
+.imgredes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -5rem;
+    gap: 8px;
+}
+
+.imgredes img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.space-img a {
+    display: inline-block; 
+    margin-left: 12px;
+}
+
+/* Modo oscuro */
+.dark-mode .navbar,
+.dark-mode .sidebar,
+.dark-mode .container-nav,
+.dark-mode .modal-content,
+.dark-mode .background-image {
+    background: 
+    linear-gradient(to bottom,
+        rgba(112, 112, 103, 0.678) 0%, 
+        rgba(0, 0, 0, 1) 40%, 
+        rgba(0, 0, 0, 1) 100% 
+    ),
+    radial-gradient(circle at center,
+        rgba(167, 161, 89, 0.945) 0%, 
+        rgba(167, 161, 89, 0.945) 0%, 
+        rgba(48, 138, 130, 0.945) 0%
+    );
+    background-blend-mode: overlay;
+    background-attachment: fixed;
+}
+
+.dark-mode h1, .dark-mode h2 {
+    color: var(--dark-mode-secundary);
+}
+
+.dark-mode #button1 {
+    background-color: var(--dark-mode-third);
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px 1px var(--dark-mode-secundary);
+    border: 1px solid var(--secondary-color);
+}
+
+.dark-mode #button2  {
+    background-color: var(--dark-mode-third);
+    border-radius: 1rem;
+    box-shadow: 0 2px 5px 1px var(--dark-mode-secundary);
+    border: 1px solid var(--secondary-color);
+}
+
+.dark-mode #button2:hover {
+    background-color: var(--dark-mode-primary);
+}
+
+.dark-mode #button1:hover {
+    background-color: var(--dark-mode-primary);
+}
+
+.dark-mode #button3 {
+    background-color: var(--dark-mode-secundary);
+    border-radius: 1rem;
+    box-shadow: none;
+    border: 1px solid var(--dark-mode-secundary);
+}
+
+.dark-mode #button3:hover {
+    background-color: var(--dark-mode-primary);
+    color: white;
+}
+
+.dark-mode {
+    background: var(--dark-mode-primary);
+}
+
+.dark-mode .result {
+    background: var(--dark-mode-third);
+    border: 2px solid var(--dark-mode-secundary);
+    border-radius: 18px;
+    box-shadow: 0 0 5px 2px var(--dark-mode-secundary);
+}
+
+.dark-mode textarea {
+    background: var(--dark-mode-third);
+    border: 2px solid var(--dark-mode-secundary);
+    border-radius: 15px;
+    box-shadow: 0 0 5px 2px var(--dark-mode-secundary);
+}
+
+.dark-mode #hoverMessage {
+    background-color: var(--dark-mode-secundary);
+}
+
+.dark-mode #hoverMessage1 {
+    background-color: var(--dark-mode-secundary);
+}
+
+/* Media Queries */
+/* Para portátiles */
+@media (max-width: 1400px) and (min-width: 1100px) {
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: 2rem;
+        margin-top: 4rem;
+    }
+    .textForm {
+        flex-grow: 1;
+        margin-left: 1rem;
+        padding: 0px;
+    }
+    textarea {
+        width: 100%;
+        height: 18rem; /* Ajusta la altura para portátiles */
+        font-size: 20px; /* Ajusta el tamaño de fuente para portátiles */
+    }
+    #button1,
+    #button2 {
+        width: 100%;
+        font-size: 16px; /* Ajusta el tamaño de fuente para portátiles */
+    }
+    .sidebar {
+        height: 10%;
+    }
+    .result {
+        height: 28rem;
+        width: 60%;
+        flex-grow: 1;
+        margin-left: 4rem;
+    }
+    .result1 {
+        margin-top: 4rem;
+    }
+    .button-container {
+        width: 100%;
+        margin-top: 20px;
+    }
+    #myImage{
+        width: 50%;
+        margin-left: 5rem;
+    }
+    .sidebar {
+        height: 100%;
+    }
+    #button3{
+        padding: 20px 20px;
+    }
+    main, footer, nav {
+        transition: transform 0.3s ease;
+      }
+      
+      .move-right {
+        transform: translateX(50px); 
+      }
+      .move-left {
+        transform: translateX(-50px); 
+      }
+
+    .sidebar p {
+        font-size: 14px;
+    }  
+    .sidebar h2 {
+        font-size: 18px;
+    } 
+    .sidebar h1 {
+        font-size: 22px;
+    } 
+    #myText {
+       height: 3rem; 
+        margin-left: -1rem;
+    }
+}
+
+/* Para tablets */
+@media (max-width: 1099px) and (min-width: 480px) {
+   
+    .container {
+        padding: 2rem;
+       flex-direction: column;
+       margin-top: 4rem;
+    }
+    .textForm {
+        padding: 20px;
+        margin-right: 8rem;
+    }
+    .result {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: 30rem;
+        border-radius: 3rem;
+        margin-left: 4rem;
+    }
+    .result1 {
+        margin-top: 3rem;
+    }
+    
+    .result h2 {
+        margin-top: -2rem;
+    }
+    textarea {
+        width: 100%;
+        height: 40rem; /* Ajusta la altura para tablets */
+        font-size: 30px; /* Ajusta el tamaño de fuente para tablets */
+        margin-top: 2rem;
+    }
+    #button1,
+    #button2 {
+        padding: 1.4rem; /* Ajusta el padding para tablets */
+        font-size: 14px; /* Ajusta el tamaño de fuente para tablets */
+        width: 100%;
+    }
+    .button-container {
+        justify-content: space-between;
+        margin-bottom: 2.2rem;
+    }
+    #myImage {
+        display: none;
+    }
+    #myText {
+        height: 4rem;
+        margin-left: 4rem;
+    }
+}
+
+/* Para smartphones */
+@media (max-width: 479px) {
+    .container {
+        padding: 1rem;
+        flex-direction: column;
+        margin-top: 4rem;
+    }
+    .textForm {
+        width: 100%;
+        margin-left: 0; /* Ajustado */
+    }
+    .result {
+        width: 100%;
+        height: 15rem;
+        margin-top: 2rem;
+        margin-left: 4rem; /* Ajustado */
+    }
+    .result h2 {
+        margin-top: -1.8rem;
+    }
+    #myImage {
+        display: none;
+    }
+    textarea {
+        width: 100%;
+        height: 17rem;
+        font-size: 1rem;
+        margin-top: 1rem;
+    }
+    #button1,
+    #button2 {
+        padding: 1.3rem;
+        font-size: 1rem;
+        width: 100%;
+        height: auto;
+    }
+    #button3 {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .button-container {
+        flex-direction: column;
+    }
+    .modal-content {
+        width: 90%;
+    }
+    .instruction-button {
+        font-size: 1rem;
+        padding: 4px 8px;
+        margin-left: 0; /* Ajustado */
+    }
+    #myText {
+        height: 5rem;
+        margin-left: 0; /* Ajustado */
+    }
+}

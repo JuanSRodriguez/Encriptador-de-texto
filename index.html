@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto - JSRC</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="img-logo">
+            <img src="./Img/logo-juan.png" alt="logo JSRC">
+        </div>
+        <button class="toggle-btn">
+            <img src="./Img/preguntas-mas-frecuentesimg.png" alt="Icono de pregunta" class="icon">
+            <div id="hoverMessage" class="hidden">Ayuda</div>
+        </button>
+        <div class="toggle-container"></div>
+            <button class="pregunta-img"  id="dark-mode-toggle">
+                <img src="./Img/dia-y-noche-img.png" alt="Icono modo dia o noche" class="icon">
+                <div id="hoverMessage1" class="hidden">Modo oscuro</div>
+            </button>
+    </nav> 
+    <div class="sidebar">
+        <div class="container-nav">
+            <button class="instruction-button">
+                <img src="./Img/instrucciones.png" alt="Icono de instrucciones" class="icon">
+              </button>
+              <h1> Instrucciones</h1>
+              <h2>🛡️ Encriptar Texto</h2>
+              <p><span class="highlight">1. ✍️ Escribe tu mensaje:</span> Ingresa tu mensaje en "ingresa el texto aquí".</p>
+              <p><span class="highlight">2. 🔒 Haz clic en "Encriptar":</span> Obtén el texto encriptado.</p>
+              <p><span class="highlight">3. 📋 Copia el texto encriptado:</span> Usa el botón "Copiar" para copiar el texto encriptado.</p>
+              <h2>🔓 Desencriptar Texto</h2>
+              <p><span class="highlight">1. 📥 Pega el texto encriptado:</span> Ingresa el mensaje encriptado recibido en el formulario.</p>
+              <p><span class="highlight">2. 🗝️ Haz clic en "Desencriptar":</span> Ve el mensaje original.</p>
+        </div>
+    </div>
+    <main class="background-image">
+        <div class="container">
+            <div class="textForm">
+                <form>
+                    <textarea id="inputText" placeholder="Ingrese el texto aquí"></textarea>
+                        <div class="advertencia">
+                            <img class="img-informacion" src="./Img/boton-de-informacion.png" alt="">
+                            <p>Solo letras minusculas y sin acentos</p>
+                        </div>
+                        <div class="button-container">
+                            <button id="button1">Encriptar</button>
+                            <button id="button2">Desencriptar</button>
+                        </div>
+                </form>
+            </div>
+            <div class="result">
+            <div class="result1">
+                <div class="img-result">
+                    <img id="myImage" src="./Img/imagen-clara.png" alt="Img-resulstyle="display: block;>
+                </div>
+                <h2 id="outputText">No se encontro ningún mensaje</h2>
+                <p id="myText1">Ingrese el texto que desea encriptar o desencriptar</p>
+                <div class="button3">
+                    <button id="button3">Copiar</button>
+                    <div id="copyMessage">Texto copiado</div>
+               </div>
+            </div>
+                <div class="scroll">
+                    <p id="myText" ></p>
+                </div>  
+            </div>
+
+            </div>
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-button">&times;</span>
+                    <p id="modal-message"></p>
+                    <img src="./Img/advertenciaimg.png" alt="" class="img-modal">
+                </div>
+            </div>
+        </div>
+    </main> 
+    <footer class="background-image">
+        <div class="imgredes">
+            <p class="footer__copy">&#169; 2024 JSRC</p>
+
+            <div class="space-img">
+                <a href="https://www.linkedin.com/in/juan-sebastian-rodriguez-cuellar95/" target="_blank">
+                <img src="./Img/linkedinimg.png" alt="linkedin-img">
+                </a>
+
+                <a href="https://github.com/JuanSRodriguez" target="_blank">
+                <img src="./Img/githubimg.jpg" alt="github-img">
+                </a>
+            </div>
+    </div>
+</footer>
+
+</body>
+<script src="app.js"></script>
+</html>
