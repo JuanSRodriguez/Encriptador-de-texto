@@ -24,6 +24,9 @@ Este proyecto es una herramienta web para encriptar y desencriptar texto de mane
 2. Haz clic en el botón "Encriptar".
 3. Copia el texto encriptado o desencríptalo cuando lo necesites.
 
+## si quieres interactuar con el encriptador de texto da click en el siguiente enlace:
+https://juansrodriguez.github.io/Encriptador-de-texto/
+
 ## Licencia
 
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo LICENSE para obtener más detalles.
